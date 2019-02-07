@@ -1,0 +1,218 @@
+body{
+    background-color: beige;
+    margin: 0;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5,minmax(30px, auto));
+    grid-template-areas:
+    "header header header header header"
+    "sidebar sidebar sidebar sidebar sidebar"
+    "main main main main main"
+
+
+}
+
+header{
+    align-items: center;
+    background-color: aqua;
+    display: flex;
+    grid-area: header;
+    justify-content: space-between;
+    padding: 0 10px;
+
+}
+
+header nav{
+    display: none;
+}
+
+header nav a{
+    border: solid;
+    border-radius: 50px;
+    color: black;
+    font-size: 20pt;
+    padding: 5px;
+    text-decoration: none;
+
+}
+
+.menu-hamburguer{
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30px;
+}
+
+.traco{
+    background-color: black;
+    border-radius: 10px;
+    height: 3px;
+    margin: 3px 0;
+    width: 100%;
+    
+}
+
+.sidebar{
+    background-color: white;
+    grid-area: sidebar;
+    padding: 30px 0;   
+    margin: 0px 0px 0px 0px;
+}
+
+.sidebar nav{
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.sidebar nav a{
+    color:black;
+    text-decoration: none;
+}
+
+
+main{
+    grid-area: main;
+}
+
+main p{
+    display: flex;
+    justify-content: center;
+}
+
+main h1{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+
+
+/* ------------------------------------------------------------------------------------------------ */
+/* Media Query */
+/* Tudo que eu digitar aqui vai ser execultado quando minha tela tiver pelomenos 900px */
+
+/* Breakpoint para tablet */
+@media(min-width:768px){
+    header nav{
+        display: block;
+    }
+    .menu-hamburguer{
+        display: none;
+    }
+    main{
+        margin: auto;
+        max-width: 1200px;
+    }
+    .sidebar{
+        margin: 30px 10px 0px 10px;
+    }
+
+    .sidebar a{
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 5px;
+    }
+
+    header h3{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 30pt;
+        margin: 10px
+
+    }
+
+    main h1{
+        font-size: 45pt;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* Breakpoint para notebooks pequenos */
+@media(min-width: 992px){
+    .grid{
+        grid-template-areas:
+    "header header header header header"
+    ". main main main sidebar"
+    ". main main main ."
+    }
+
+    .sidebar{
+        border-radius: 25px;
+        box-shadow: 1px 1px 15px 2px rgb(0, 0, 0, 0.1);
+        margin: 5px;
+
+    }
+
+    .sidebar nav{
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .sidebar nav a{
+        margin: 0;
+    }
+    
+    .sidebar{
+        border-radius: 25px;
+        box-shadow: 1px 1px 15px 2px rgb(0, 0, 0, 0.1);
+        margin: 5px;
+
+    }
+
+    .sidebar nav{
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .sidebar nav a{
+        margin: 0;
+    }
+
+    .sidebar a{
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 5px;
+    }
+
+    
+    main h1{
+        font-size: 45pt;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* Breakpoint para notebooks grandes e Desktop */
+@media(min-width: 1200px){
+    main{
+        margin: auto;
+        max-width: 1200px;
+    }
+    .sidebar{
+        margin: 30px 10px 0px 10px;
+    }
+
+    .sidebar a{
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 5px;
+    }
+
+    header h3{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 30pt;
+        margin: 10px
+
+    }
+
+    main h1{
+        font-size: 45pt;
+        display: flex;
+        justify-content: center;
+    }
+}
